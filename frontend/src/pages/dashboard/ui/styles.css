@@ -1,0 +1,660 @@
+
+.dashboard-panel {
+  padding:22px;
+  background:#eaf3fd;
+  border-radius:13px;
+  border:1px solid #e2edf9}
+.kpi-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:22px;
+  margin-bottom:20px}
+.kpi-card {
+  padding:20px 23px;
+  border-radius:11px;
+  background:white;
+  box-shadow:var(--shadow);
+  min-width:0;
+  border:1px solid #e8eff7}
+.kpi-card>div:first-child {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:13px}
+.kpi-card>div:first-child>span:first-child {
+  color:#6c7b8d;
+  font-size:14px}
+.kpi-icon {
+  width:35px;
+  height:35px;
+  border-radius:10px;
+  display:grid;
+  place-items:center;
+  background:#e6f1ff;
+  color:#4e8ac1}
+.kpi-card>strong {
+  font-size:29px;
+  font-weight:700;
+  letter-spacing:-1px;
+  white-space:nowrap}
+.kpi-trend {
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:14px;
+  margin-top:15px;
+  color:#7c899a}
+.kpi-trend>span:first-child {
+  display:flex;
+  align-items:center;
+  gap:2px;
+  border-radius:20px;
+  padding:4px 7px;
+  font-weight:600}
+.kpi-trend .positive {
+  background:#e2f4e9;
+  color:#27794e}
+.kpi-trend .negative {
+  background:#fff0e0;
+  color:#8a5300}
+.kpi-context {
+  font-size:14px;
+  color:#7c899a;
+  margin-top:20px}
+.charts-row {
+  display:grid;
+  grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);
+  gap:18px;
+  margin-bottom:18px}
+.chart-total {
+  text-align:right}
+.chart-total strong {
+  display:block;
+  font-size:16px;
+  color:var(--primary);
+  letter-spacing:-.3px;
+  white-space:nowrap}
+.chart-total small {
+  display:block;
+  font-size:14px;
+  color:#7c899a;
+  margin-top:6px}
+.bar-chart {
+  height:190px;
+  display:flex;
+  gap:15px;
+  padding:4px 0 25px;
+  margin-top:10px}
+.chart-axis {
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-width:24px;
+  font-size:14px;
+  color:#8795a5;
+  padding-bottom:0}
+.bars-area {
+  position:relative;
+  display:flex;
+  flex:1;
+  justify-content:space-around;
+  gap:14px;
+  align-items:flex-end;
+  padding:0 10px;
+  border-bottom:1px solid #dbe7f5}
+.chart-gridlines {
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  pointer-events:none}
+.chart-gridlines>span {
+  border-top:1px solid #e9eff7;
+  width:100%}
+.bar-group {
+  position:relative;
+  flex:1;
+  max-width:51px;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  align-items:center}
+.chart-bar {
+  width:100%;
+  max-width:47px;
+  border-radius:5px 5px 0 0;
+  background:#bad7f2;
+  position:relative;
+  z-index:1;
+  min-height:1px;
+  transition:height .3s}
+.chart-bar.current {
+  background:#4b88be}
+.chart-bar:hover {
+  background:#7caad3}
+.chart-bar>span {
+  position:absolute;
+  bottom:100%;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:14px;
+  margin-bottom:7px;
+  white-space:nowrap;
+  color:#2b5277}
+.bar-label {
+  position:absolute;
+  top:calc(100% + 9px);
+  font-size:14px;
+  color:#77889b;
+  text-transform:capitalize}
+.bar-group:last-child .bar-label {
+  font-weight:600;
+  color:#315574}
+.category-chart-body {
+  display:flex;
+  gap:20px;
+  align-items:center;
+  justify-content:center;
+  padding:12px 0 8px}
+.donut {
+  width:137px;
+  height:137px;
+  min-width:137px;
+  display:grid;
+  place-items:center;
+  border-radius:50%}
+.donut>div {
+  width:97px;
+  height:97px;
+  border-radius:50%;
+  background:#fff;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:5px}
+.donut strong {
+  font-size:26px;
+  letter-spacing:-.5px}
+.donut span {
+  font-size:14px;
+  color:var(--muted)}
+.donut-legend {
+  display:flex;
+  flex-direction:column;
+  gap:17px}
+.donut-label {
+  display:flex;
+  align-items:center;
+  gap:7px}
+.donut-label i {
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  display:inline-block}
+.donut-label strong {
+  font-size:14px}
+.donut-legend small {
+  font-size:14px;
+  color:#738196;
+  display:block;
+  line-height:1.5;
+  margin-top:4px;
+  padding-left:15px}
+.dashboard-bottom {
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.95fr) minmax(0,1.15fr);
+  gap:18px}
+.dashboard-bottom .card {
+  padding:20px 18px}
+.dashboard-bottom .card h2 {
+  font-size:15px}
+.dentist-table {
+  font-size:14px}
+.dentist-table th {
+  font-size:14px;
+  font-weight:500;
+  padding:7px 6px 13px;
+  color:#7d91a5;
+  border-bottom:1px solid #e5edf7}
+.dentist-table td {
+  padding:15px 6px;
+  border-bottom:1px solid #eef3f8;
+  white-space:nowrap;
+  color:#587897;
+  font-size:14px}
+.dentist-table td:first-child {
+  display:flex;
+  align-items:center;
+  gap:8px}
+.dentist-table td:first-child strong {
+  font-size:14px;
+  font-weight:500;
+  color:#2c5579}
+.mini-avatar {
+  height:27px;
+  width:27px;
+  min-width:27px;
+  display:inline-grid;
+  place-items:center;
+  border-radius:50%;
+  background:#e7f0fa;
+  color:#6188b1;
+  font-size:14px;
+  font-weight:600}
+.dentist-table td:last-child {
+  text-align:right}
+.dentist-table th:last-child {
+  text-align:right}
+.dentist-table tr:last-child td {
+  border:0}
+.payment-bars {
+  display:flex;
+  flex-direction:column;
+  gap:23px;
+  padding:8px 0}
+.payment-bars>div>div:first-child {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  font-size:14px;
+  margin-bottom:9px}
+.payment-bars small {
+  font-size:14px;
+  color:#8190a1}
+.payment-track {
+  height:6px;
+  border-radius:5px;
+  background:#e7f0fa;
+  overflow:hidden}
+.payment-track>span {
+  display:block;
+  height:100%;
+  border-radius:5px}
+.today-card .card-heading {
+  align-items:flex-start;
+  gap:8px;
+  margin-bottom:14px}
+.today-card .card-heading p {
+  font-size:14px;
+  text-transform:capitalize}
+.today-card .text-button {
+  font-size:14px;
+  white-space:nowrap}
+.today-appointments {
+  display:flex;
+  flex-direction:column;
+  gap:8px}
+.today-appointments>button {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 9px;
+  background:#f4f8fd;
+  border:none;
+  border-radius:8px;
+  text-align:left;
+  min-height:54px}
+.today-appointments>button:hover {
+  background:#e9f3ff}
+.today-appointments time {
+  font-size:14px;
+  font-weight:600;
+  color:#4d86bb}
+.today-appointments>button>span:nth-child(2) {
+  flex:1;
+  min-width:0}
+.today-appointments strong {
+  display:block;
+  font-size:14px;
+  font-weight:600;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis}
+.today-appointments small {
+  display:block;
+  font-size:14px;
+  color:#7b8a9b;
+  margin-top:5px;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis}
+.today-appointments .badge {
+  font-size:14px;
+  padding:5px 7px;
+  gap:0}
+.today-appointments .status-dot {
+  display:none}
+.dashboard-bottom .empty-state {
+  padding:22px 5px;
+  min-height:210px}
+.dashboard-bottom .empty-state p {
+  font-size:14px}
+.dashboard-bottom .empty-state h3 {
+  font-size:14px}
+.dashboard-bottom .empty-icon {
+  width:42px;
+  height:42px;
+  border-radius:12px}
+.dashboard-insight {
+  margin-top:18px;
+  border:1px solid #d1e5f9;
+  background:#deecfb;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  border-radius:10px;
+  padding:17px 21px}
+.dashboard-insight>span {
+  width:40px;
+  height:40px;
+  min-width:40px;
+  background:#c7def5;
+  color:#477fad;
+  border-radius:10px;
+  display:grid;
+  place-items:center}
+.dashboard-insight strong {
+  font-size:14px;
+  font-weight:600;
+  color:#2d5479}
+.dashboard-insight p {
+  font-size:14px;
+  line-height:1.7;
+  color:#637f99;
+  margin-top:4px}
+.dashboard-insight>button {
+  width:40px;
+  height:40px;
+  min-width:40px;
+  margin-left:auto;
+  border:none;
+  background:none;
+  color:#5587b2;
+  border-radius:8px}
+.dashboard-insight>button:hover {
+  background:#cde1f7}
+.month-picker {
+  display:flex;
+  align-items:center;
+  gap:7px;
+  border:1px solid #a7bed5;
+  border-radius:8px;
+  padding:0 12px;
+  color:#4b84b7;
+  background:white}
+.month-picker input {
+  border:none;
+  outline:none!important;
+  padding:10px 0;
+  min-height:44px;
+  font-size:14px;
+  color:#365574;
+  width:155px}
+@media (min-width:1600px) {
+  .kpi-card>strong {
+  font-size:34px}
+.bar-chart {
+  height:230px}
+.donut {
+  width:165px;
+  height:165px;
+  min-width:165px}
+.donut>div {
+  width:118px;
+  height:118px}
+.category-chart-body {
+  gap:25px}
+.donut-legend small {
+  font-size:14px}
+.donut-label strong {
+  font-size:16px}
+.dashboard-bottom .card h2 {
+  font-size:17px}
+.dentist-table td:first-child strong,.dentist-table td {
+  font-size:14px}
+.payment-bars>div>div:first-child {
+  font-size:14px}
+.today-appointments strong {
+  font-size:14px}
+.today-appointments .badge {
+  font-size:14px}
+.today-appointments small {
+  font-size:14px}
+}
+@media (max-width:1250px) {
+  .dashboard-panel {
+  padding:18px}
+.kpi-card {
+  padding:18px}
+.kpi-card>strong {
+  font-size:25px}
+.kpi-grid {
+  gap:15px}
+.charts-row {
+  grid-template-columns:1.6fr 1fr;
+  gap:14px}
+.charts-row .card {
+  padding:18px}
+.category-chart-body {
+  flex-direction:column;
+  gap:17px;
+  padding-top:0}
+.donut {
+  width:115px;
+  height:115px;
+  min-width:115px}
+.donut>div {
+  width:81px;
+  height:81px}
+.donut-legend {
+  flex-direction:row;
+  gap:11px;
+  align-items:flex-start}
+.donut-legend small {
+  font-size:14px;
+  max-width:78px;
+  padding-left:0}
+.donut-label strong {
+  font-size:14px}
+.category-chart-card .card-heading {
+  margin-bottom:12px}
+.dashboard-bottom {
+  grid-template-columns:1fr 1fr;
+  gap:14px}
+.today-card {
+  grid-column:1 / -1}
+.today-appointments {
+  display:grid;
+  grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px) {
+  .dashboard-panel {
+  padding:13px}
+.dashboard-panel {
+  padding:13px}
+.kpi-grid {
+  gap:10px;
+  margin-bottom:13px}
+.kpi-card {
+  padding:14px 12px}
+.kpi-card>div:first-child {
+  gap:3px;
+  margin-bottom:11px}
+.kpi-card>div:first-child>span:first-child {
+  font-size:14px;
+  line-height:1.5}
+.kpi-icon {
+  height:27px;
+  width:27px;
+  min-width:27px;
+  border-radius:8px}
+.kpi-icon svg {
+  width:16px}
+.kpi-card>strong {
+  font-size:21px;
+  letter-spacing:-.8px;
+  white-space:normal;
+  line-height:1.4;
+  display:block}
+.kpi-trend {
+  flex-wrap:wrap;
+  gap:5px;
+  margin-top:10px;
+  font-size:14px}
+.kpi-trend>span:last-child {
+  font-size:14px;
+  line-height:1.5}
+.kpi-context {
+  font-size:14px;
+  line-height:1.6;
+  margin-top:12px}
+.charts-row {
+  grid-template-columns:1fr;
+  gap:13px;
+  margin-bottom:13px}
+.charts-row .card {
+  padding:19px}
+.category-chart-body {
+  flex-direction:row;
+  gap:30px;
+  padding:2px 0}
+.donut {
+  width:133px;
+  height:133px;
+  min-width:133px}
+.donut>div {
+  width:94px;
+  height:94px}
+.donut-legend {
+  flex-direction:column;
+  gap:12px}
+.donut-legend small {
+  font-size:14px;
+  max-width:none;
+  margin-top:3px;
+  padding-left:15px}
+.donut-label strong {
+  font-size:14px}
+.dashboard-bottom {
+  gap:13px;
+  grid-template-columns:1fr 1fr}
+.dashboard-bottom .card {
+  padding:17px 14px}
+.dashboard-bottom .card h2 {
+  font-size:14px}
+.dentist-table th {
+  font-size:14px;
+  padding:7px 3px 12px}
+.dentist-table td {
+  font-size:14px;
+  padding:13px 3px}
+.dentist-table td:first-child strong {
+  font-size:14px;
+  white-space:normal;
+  line-height:1.5}
+.dentist-table td:first-child {
+  gap:5px}
+.mini-avatar {
+  width:22px;
+  height:22px;
+  min-width:22px;
+  font-size:14px}
+.payment-bars>div>div:first-child {
+  font-size:14px}
+.payment-bars small {
+  font-size:14px}
+.today-appointments .badge {
+  font-size:14px}
+.dashboard-insight {
+  padding:15px 13px;
+  gap:10px;
+  margin-top:13px}
+.dashboard-insight>span {
+  width:32px;
+  height:32px;
+  min-width:32px}
+.dashboard-insight strong {
+  font-size:14px}
+.dashboard-insight p {
+  font-size:14px}
+.dashboard-insight>button {
+  width:25px;
+  min-width:25px}
+.month-picker {
+  padding:0 9px;
+  gap:4px}
+.month-picker input {
+  font-size:14px;
+  width:133px;
+  min-height:38px}
+.month-picker svg {
+  width:15px}
+}
+@media (max-width:480px) {
+  .kpi-card {
+  padding:13px 10px}
+.kpi-icon {
+  display:none}
+.kpi-card>strong {
+  font-size:20px}
+.kpi-trend>span:last-child {
+  display:none}
+.kpi-grid {
+  gap:8px}
+.kpi-context {
+  font-size:14px;
+  margin-top:13px}
+.dashboard-panel {
+  padding:10px}
+.dashboard-bottom {
+  grid-template-columns:1fr}
+.today-card {
+  grid-column:auto}
+.today-appointments {
+  grid-template-columns:1fr}
+.today-appointments .badge {
+  font-size:14px}
+.today-appointments strong {
+  font-size:14px}
+.today-appointments small {
+  font-size:14px}
+.dashboard-bottom .card h2 {
+  font-size:16px}
+.dentist-table th {
+  font-size:14px}
+.dentist-table td {
+  font-size:14px}
+.dentist-table td:first-child strong {
+  font-size:14px}
+.dentist-table td:first-child {
+  gap:10px}
+.mini-avatar {
+  height:30px;
+  width:30px;
+  min-width:30px;
+  font-size:14px}
+.payment-bars>div>div:first-child {
+  font-size:14px}
+.dashboard-insight>button {
+  display:none}
+.bar-chart {
+  gap:8px;
+  height:178px}
+.bars-area {
+  gap:11px;
+  padding:0 4px}
+.chart-bar>span {
+  font-size:14px}
+.category-chart-body {
+  gap:25px}
+}
+
+
+.dentist-table td:first-child strong {white-space:normal;line-height:1.5;}
+.dentist-table td {white-space:normal;}
+@media(max-width:760px){.dashboard-bottom {grid-template-columns:1fr;}.kpi-grid {grid-template-columns:1fr;}.kpi-card>strong {font-size:30px;}.kpi-card>div:first-child {margin-bottom:8px;}.kpi-icon {display:grid;}.kpi-trend {margin-top:10px;}.kpi-trend>span:last-child {display:inline;}.today-appointments {grid-template-columns:1fr;}}

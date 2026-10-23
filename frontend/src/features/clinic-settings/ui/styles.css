@@ -1,0 +1,9 @@
+.settings-form h3 {
+  font-size:15px}
+.settings-form .button {
+  margin-top:10px}
+.settings-separator {
+  height:1px;
+  background:var(--line);
+  margin:25px 0}
+

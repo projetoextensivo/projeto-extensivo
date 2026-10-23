@@ -1,0 +1,194 @@
+
+.procedures-panel {
+  padding:24px;
+  background:#eaf3fd;
+  border:1px solid #e2edf9;
+  border-radius:13px}
+.category-tabs {
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin:20px 0 25px}
+.category-tabs button {
+  border:1px solid #bdd4eb;
+  background:white;
+  padding:9px 16px;
+  border-radius:30px;
+  font-size:14px;
+  min-height:38px;
+  font-weight:500;
+  color:#355471}
+.category-tabs .active {
+  border-color:var(--primary);
+  background:var(--primary);
+  color:white}
+.category-tabs button:not(.active):hover {
+  background:#f2f8ff}
+.procedures-grid {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px}
+.procedure-card {
+  background:white;
+  padding:21px;
+  border-radius:11px;
+  display:flex;
+  flex-direction:column;
+  box-shadow:var(--shadow);
+  min-width:0;
+  border:1px solid #e8eff7;
+  transition:transform .18s,box-shadow .18s}
+.procedure-card:hover {
+  transform:translateY(-2px);
+  box-shadow:0 7px 22px #153d6818}
+.procedure-card-top {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:8px;
+  margin:-4px 0 14px}
+.category-badge {
+  background:#dbeeff;
+  color:#315d84;
+  border-radius:20px;
+  padding:6px 10px;
+  font-size:14px;
+  display:inline-block;
+  font-weight:500}
+.procedure-card-actions {
+  display:flex;
+  opacity:.55}
+.procedure-card:hover .procedure-card-actions,.procedure-card:focus-within .procedure-card-actions {
+  opacity:1}
+.procedure-card-actions .icon-button {
+  width:30px;
+  min-width:30px;
+  height:36px}
+.procedure-card-actions svg {
+  width:15px}
+.procedure-card h2 {
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:-.4px;
+  line-height:1.45;
+  margin-bottom:13px}
+.procedure-card>p {
+  font-size:14px;
+  line-height:1.7;
+  color:#657589;
+  flex:1;
+  min-height:65px;
+  margin-bottom:32px}
+.procedure-card-footer {
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  align-items:center;
+  padding-top:17px;
+  border-top:1px solid #e3edf8}
+.procedure-card-footer>span {
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:14px;
+  color:#728195}
+.procedure-card-footer strong {
+  font-size:17px;
+  letter-spacing:-.4px;
+  color:var(--primary)}
+.panel-footnote {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  font-size:14px;
+  color:#738ba3;
+  padding-top:22px}
+@media (min-width:1600px) {
+  .procedure-card {
+  padding:25px}
+.procedure-card h2 {
+  font-size:21px}
+.procedure-card>p {
+  font-size:14px;
+  min-height:75px}
+.procedure-card-footer strong {
+  font-size:20px}
+}
+@media (max-width:1250px) {
+  .procedures-panel {
+  padding:18px}
+.procedures-grid {
+  gap:14px}
+.procedure-card {
+  padding:17px}
+.procedure-card h2 {
+  font-size:16px}
+.procedure-card>p {
+  font-size:14px}
+.procedure-card-footer strong {
+  font-size:15px}
+}
+@media (max-width:760px) {
+  .procedures-panel {
+  padding:13px}
+.procedures-grid {
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:13px}
+.procedure-card {
+  padding:16px}
+.procedure-card h2 {
+  font-size:16px;
+  line-height:1.5;
+  margin-bottom:10px}
+.procedure-card>p {
+  font-size:14px;
+  min-height:70px;
+  margin-bottom:22px}
+.procedure-card-footer {
+  flex-wrap:wrap;
+  padding-top:14px;
+  gap:9px}
+.procedure-card-footer strong {
+  font-size:16px}
+.procedure-card-top {
+  gap:3px}
+.procedure-card-actions .icon-button {
+  width:25px;
+  min-width:25px}
+.category-badge {
+  font-size:14px;
+  padding:5px 8px}
+.category-tabs {
+  gap:6px;
+  margin:16px 0 20px}
+.category-tabs button {
+  font-size:14px;
+  padding:7px 12px;
+  min-height:35px}
+}
+@media (max-width:480px) {
+  .procedures-panel {
+  padding:12px}
+.procedures-grid {
+  grid-template-columns:1fr}
+.procedure-card {
+  padding:20px}
+.procedure-card h2 {
+  font-size:19px}
+.procedure-card>p {
+  font-size:14px;
+  min-height:0;
+  margin-bottom:28px}
+.procedure-card-footer {
+  flex-wrap:nowrap}
+.procedure-card-footer strong {
+  font-size:19px}
+.category-badge {
+  font-size:14px}
+.procedure-card-actions .icon-button {
+  width:35px;
+  min-width:35px;
+  height:36px}
+}
+

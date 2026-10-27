@@ -23,8 +23,10 @@ if (!find('settings','clinic')) {
  const seed=seedData();
  db.exec('BEGIN');
  try {for(const kind of ['patients','procedures','appointments','records']) seed[kind].forEach(item=>save(kind,item)); save('settings',{...seed.settings,id:'clinic'});
- db.prepare('INSERT INTO users(id,email,name,role,password) VALUES(?,?,?,?,?)').run('demo','demo@odontoagenda.com','Lucas Maximo','Dentista',hash('Odonto@2026'));db.exec('COMMIT');} catch(e){db.exec('ROLLBACK');throw e;}
+ db.prepare('INSERT INTO users(id,email,name,role,password) VALUES(?,?,?,?,?)').run('demo','demo@odontoagenda.com','Lucas Maximo','Administrador',hash('Odonto@2026'));db.exec('COMMIT');} catch(e){db.exec('ROLLBACK');throw e;}
 }
+db.prepare("UPDATE users SET role='Administrador' WHERE id='demo'").run();
+for(const patient of list('patients')){if('insurance' in patient){delete patient.insurance;save('patients',patient);}}
 const auth = req => {const token=req.headers.cookie?.split(';').map(x=>x.trim()).find(x=>x.startsWith('odonto_session='))?.split('=')[1]; if(!token) return null; const session=db.prepare('SELECT user_id FROM sessions WHERE token=? AND expires>?').get(token,Date.now());return session && db.prepare('SELECT * FROM users WHERE id=?').get(session.user_id);};
 function session(res,user,remember=true) {const token=randomBytes(32).toString('hex'); const age=remember?7*86400:12*3600; db.prepare('INSERT INTO sessions VALUES(?,?,?)').run(token,user.id,Date.now()+age*1000);res.setHeader('Set-Cookie','odonto_session='+token+'; HttpOnly; SameSite=Strict; Path=/'+(remember?'; Max-Age='+age:''));}
 async function body(req) {let size=0; const chunks=[]; for await(const chunk of req){size+=chunk.length;if(size>100000)throw new AppError('O conteúdo enviado ? muito grande.',413);chunks.push(chunk);} try{return JSON.parse(Buffer.concat(chunks).toString()||'{}');}catch{throw new AppError('Não foi possível ler os dados enviados.');}}
@@ -49,9 +51,9 @@ const server=http.createServer(async(req,res)=>{
   if(url.pathname.endsWith('register')){
    if(!data.name?.trim()||!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)||String(data.password||'').length<8)throw new AppError('Preencha seu nome, um e-mail válido e uma senha com pelo menos 8 caracteres.');
    if(data.password!==data.confirmPassword||!data.terms)throw new AppError('Confirme a senha e aceite os termos para continuar.');
-   if(!['Dentista','Recepcionista','Administrador'].includes(data.role))throw new AppError('Selecione seu cargo.');
+   if(data.role && !['Secretária','Recepcionista'].includes(data.role))throw new AppError('Selecione seu cargo.');
    if(db.prepare('SELECT id FROM users WHERE email=?').get(email))throw new AppError('Este e-mail já possui uma conta. Entre com sua senha.',409);
-   user={id:randomUUID(),name:data.name.trim(),email,role:data.role,password:hash(data.password)};db.prepare('INSERT INTO users VALUES(?,?,?,?,?)').run(user.id,email,user.name,user.role,user.password);
+   user={id:randomUUID(),name:data.name.trim(),email,role:'Secretária',password:hash(data.password)};db.prepare('INSERT INTO users VALUES(?,?,?,?,?)').run(user.id,email,user.name,user.role,user.password);
   }else{
    user=db.prepare('SELECT * FROM users WHERE email=?').get(email);
    if(!user||!check(String(data.password||''),user.password))throw new AppError('E-mail ou senha incorretos. Confira os dados e tente de novo.',401);
@@ -61,7 +63,9 @@ const server=http.createServer(async(req,res)=>{
  const user=auth(req);if(!user)throw new AppError('Entre na sua conta para continuar.',401);
  if(req.method==='GET'&&url.pathname==='/api/auth/me')return json(publicUser(user));
  if(req.method==='POST'&&url.pathname==='/api/auth/logout'){const token=req.headers.cookie?.match(/odonto_session=([^;]+)/)?.[1];if(token)db.prepare('DELETE FROM sessions WHERE token=?').run(token);res.setHeader('Set-Cookie','odonto_session=; HttpOnly; SameSite=Strict; Path=/; Max-Age=0');return json({ok:true});}
- if(req.method==='GET'&&url.pathname==='/api/bootstrap')return json({user:publicUser(user),patients:list('patients'),procedures:list('procedures'),appointments:list('appointments'),records:list('records'),settings:find('settings','clinic')});
+ const admin=user.role==='Administrador';
+ if((url.pathname.startsWith('/api/procedures')||url.pathname.startsWith('/api/records')||url.pathname==='/api/dashboard'||url.pathname==='/api/settings'||(req.method==='DELETE'&&url.pathname.startsWith('/api/patients')))&&!admin)throw new AppError('Acesso exclusivo da administradora.',403);
+ if(req.method==='GET'&&url.pathname==='/api/bootstrap')return json({user:publicUser(user),patients:list('patients'),procedures:admin?list('procedures'):[],appointmentOptions:list('procedures').map(({id,name,duration})=>({id,name,duration})),appointments:admin?list('appointments'):list('appointments').map(({price,discount,...item})=>item),records:admin?list('records'):[],settings:find('settings','clinic')});
  if(req.method==='PUT'&&url.pathname==='/api/settings'){
   const data=await body(req);if(!data.clinicName?.trim())throw new AppError('Informe o nome da clínica.');
   if(!/^([01]\d|2[0-3]):[0-5]\d$/.test(data.openTime)||!/^([01]\d|2[0-3]):[0-5]\d$/.test(data.closeTime)||data.openTime>=data.closeTime)throw new AppError('Confira o horário de funcionamento.');
@@ -76,7 +80,7 @@ const server=http.createServer(async(req,res)=>{
  if(!match)throw new AppError('Recurso não encontrado.',404);
  const [,kind,id]=match;const existing=id?find(kind,id):null;
  if(id&&!existing)throw new AppError('Este registro não foi encontrado.',404);
- if(req.method==='GET')return json(id?existing:list(kind));
+ if(req.method==='GET'){const visible=item=>{if(!admin&&kind==='appointments'){const {price,discount,...rest}=item;return rest;}return item;};return json(id?visible(existing):list(kind).map(visible));}
  if(req.method==='DELETE'){
   if(!id)throw new AppError('Selecione o registro.');
   if(kind==='procedures'&&list('appointments').some(a=>a.procedureId===id))throw new AppError('Este procedimento possui consultas vinculadas. Edite seus dados para manter o histórico.',409);
@@ -94,7 +98,7 @@ const server=http.createServer(async(req,res)=>{
   if(!find('settings','clinic').dentists.includes(data.dentist))throw new AppError('Selecione um dentista.');
   validateAppointment(item,list('appointments'),list('patients'),list('procedures'),find('settings','clinic'));
   const procedure=find('procedures',data.procedureId);const price=existing&&existing.procedureId===data.procedureId?existing.price:procedure.price;
-  const discount=Number(data.discount||0);if(!Number.isFinite(discount)||discount<0||discount>price)throw new AppError('O desconto deve estar entre zero e o valor da consulta.');
+  const discount=Number(admin?data.discount||0:existing?.discount||0);if(!Number.isFinite(discount)||discount<0||discount>price)throw new AppError('O desconto deve estar entre zero e o valor da consulta.');
   if(!['Pix','Dinheiro','Cartão de crédito','Cartão de débito'].includes(data.payment))throw new AppError('Selecione uma forma de pagamento.');
   item={id:item.id,patientId:data.patientId,procedureId:data.procedureId,date:data.date,time:data.time,status:data.status,dentist:data.dentist,duration:procedure.duration,price,discount,payment:data.payment,notes:String(data.notes||'')};
  }
@@ -105,7 +109,7 @@ const server=http.createServer(async(req,res)=>{
   if(!['Sadio','Tratado','Em tratamento','Cárie','Ausente'].includes(data.condition))throw new AppError('Selecione uma condição válida.');
   item={id:item.id,patientId:data.patientId,title:data.title.trim(),notes:data.notes.trim(),date:data.date,dentist:user.name,tooth:data.tooth||'',condition:data.condition,anamnesis:data.anamnesis||'',category:data.category||'Evolução'};
  }
- return json(save(kind,item),req.method==='POST'?201:200);
+ const saved=save(kind,item);if(!admin&&kind==='appointments'){const {price,discount,...visible}=saved;return json(visible,req.method==='POST'?201:200);}return json(saved,req.method==='POST'?201:200);
  }catch(error){if(!(error instanceof AppError))console.error(error);if(!res.headersSent)json({message:error instanceof AppError?error.message:'Não foi possível concluir a operação. Tente novamente.'},error.status||500);else res.end();}
 });
 if(process.argv[1]===fileURLToPath(import.meta.url))server.listen(Number(process.env.PORT||3001),'127.0.0.1',()=>console.log('API OdontoAgenda: http://127.0.0.1:'+(process.env.PORT||3001)));

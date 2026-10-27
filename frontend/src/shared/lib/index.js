@@ -7,3 +7,5 @@ export const normalize = value => String(value||'').normalize('NFD').replace(/[\
 export const formValues = event => Object.fromEntries(new FormData(event.currentTarget));
 export const addDays = (value,days) => { const date = typeof value === 'string' ? parseDate(value) : new Date(value); date.setDate(date.getDate()+days); return date; };
 export const mondayOf = value => { const date = typeof value === 'string' ? parseDate(value) : new Date(value); return addDays(date,-((date.getDay()+6)%7)); };
+
+export const isAdmin = user => user?.role === 'Administrador';

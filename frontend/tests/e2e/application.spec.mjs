@@ -80,7 +80,6 @@ test('cadastro de conta e validacao dos campos',async({page})=>{
  await page.getByRole('button',{name:'Cadastre-se',exact:true}).click();
  await page.getByLabel('Nome completo').fill('Equipe Teste');
  await page.getByLabel('E-mail',{exact:true}).fill('equipe@example.com');
- await page.getByLabel('Cargo',{exact:true}).selectOption('Recepcionista');
  await page.getByLabel('Senha',{exact:true}).fill('Senha@2026');
  await page.getByLabel('Confirmar senha',{exact:true}).fill('Outra@2026');
  await page.getByRole('checkbox').check();

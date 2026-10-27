@@ -1,14 +1,14 @@
 import { dateKey } from './domain.mjs';
 export function seedData() {
  const patients = [
- {id:'p1',name:'Ana Souza',age:28,phone:'(11) 98765-4321',email:'ana@example.com',status:'Em tratamento',birthDate:'1998-04-15',insurance:'Amil Dental',allergies:'Penicilina',notes:'Paciente relata sensibilidade no dente 26 ao ingerir alimentos frios.'},
- {id:'p2',name:'Bruno Oliveira',age:34,phone:'(11) 91234-5678',email:'bruno@example.com',status:'Ativo',insurance:'Particular'},
- {id:'p3',name:'Carla Mendes',age:42,phone:'(11) 99876-5432',email:'carla@example.com',status:'Retorno',insurance:'OdontoPrev'},
- {id:'p4',name:'Daniel Santos',age:31,phone:'(11) 93456-7890',email:'daniel@example.com',status:'Ativo',insurance:'Particular'},
- {id:'p5',name:'Juliana Costa',age:26,phone:'(11) 98712-3456',email:'juliana@example.com',status:'Em tratamento',insurance:'Amil Dental'},
- {id:'p6',name:'Fernanda Rocha',age:35,phone:'(11) 97654-3210',email:'fernanda@example.com',status:'Ativo',insurance:'Particular'},
- {id:'p7',name:'Carlos Lima',age:45,phone:'(11) 96543-2109',email:'carlos@example.com',status:'Em tratamento',insurance:'Particular'},
- {id:'p8',name:'Thiago Martins',age:29,phone:'(11) 95432-1098',email:'thiago@example.com',status:'Ativo',insurance:'OdontoPrev'}
+ {id:'p1',name:'Ana Souza',age:28,phone:'(11) 98765-4321',email:'ana@example.com',status:'Em tratamento',birthDate:'1998-04-15',allergies:'Penicilina',notes:'Paciente relata sensibilidade no dente 26 ao ingerir alimentos frios.'},
+ {id:'p2',name:'Bruno Oliveira',age:34,phone:'(11) 91234-5678',email:'bruno@example.com',status:'Ativo',},
+ {id:'p3',name:'Carla Mendes',age:42,phone:'(11) 99876-5432',email:'carla@example.com',status:'Retorno',},
+ {id:'p4',name:'Daniel Santos',age:31,phone:'(11) 93456-7890',email:'daniel@example.com',status:'Ativo',},
+ {id:'p5',name:'Juliana Costa',age:26,phone:'(11) 98712-3456',email:'juliana@example.com',status:'Em tratamento',},
+ {id:'p6',name:'Fernanda Rocha',age:35,phone:'(11) 97654-3210',email:'fernanda@example.com',status:'Ativo',},
+ {id:'p7',name:'Carlos Lima',age:45,phone:'(11) 96543-2109',email:'carlos@example.com',status:'Em tratamento',},
+ {id:'p8',name:'Thiago Martins',age:29,phone:'(11) 95432-1098',email:'thiago@example.com',status:'Ativo',}
  ];
  const procedures = [
  {id:'pr1',name:'Limpeza e Profilaxia',category:'Prevenção',description:'Remoção de tártaro e placa bacteriana, com polimento e aplicação de flúor.',duration:40,price:150},

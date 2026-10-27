@@ -489,3 +489,9 @@
 
 
 @media(max-width:760px){.month-weekdays>span {font-size:14px;}.month-weekdays>span {max-width:100%;}.compact .event-top time {font-size:14px;}.calendar-legend {gap:12px;line-height:1.5;}.month-cell {min-height:120px;}}
+
+.calendar-event[draggable="true"] { cursor: grab; }
+.calendar-event[draggable="true"]:active { cursor: grabbing; opacity: .65; }
+.month-cell.drop-target, .time-slot.drop-target { background: #dff4ef; outline: 2px solid #258777; outline-offset: -2px; }
+.agenda-drag-status { color: #566b67; font-size: .85rem; margin: 0 0 12px; }
+.time-column.drop-target { background: #edf8f5; }

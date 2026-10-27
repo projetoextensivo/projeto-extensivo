@@ -24,5 +24,5 @@ export function cleanPatient(body) {
   if ((body.phone || '').replace(/\D/g,'').length < 10) throw new AppError('Informe um telefone com DDD.');
   if (body.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(body.email)) throw new AppError('Confira o e-mail do paciente.');
   if (!['Ativo','Inativo','Em tratamento','Retorno'].includes(body.status)) throw new AppError('Selecione um status válido.');
-  return { name: body.name.trim(), age, phone: body.phone, email: body.email || '', status: body.status, birthDate: body.birthDate || '', insurance: body.insurance || 'Particular', cpf: body.cpf || '', allergies: body.allergies || '', notes: body.notes || '' };
+  return { name: body.name.trim(), age, phone: body.phone, email: body.email || '', status: body.status, birthDate: body.birthDate || '', cpf: body.cpf || '', allergies: body.allergies || '', notes: body.notes || '' };
 }

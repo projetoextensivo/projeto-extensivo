@@ -1,127 +1,111 @@
-# 🦷 Sistema para Clínica Odontológica
+# DentalCare
 
-# 📌 Sobre o projeto
+Sistema web acadêmico para apoiar a gestão de uma clínica odontológica. O projeto está sendo desenvolvido de forma incremental e reúne uma aplicação web, uma API REST e materiais de modelagem do banco de dados.
 
-Este projeto consiste no desenvolvimento de um **sistema para gerenciamento de uma clínica odontológica**, criado a partir das atividades de **Pesquisa e Inovação III — Sprint 1**, utilizando a abordagem de **Lean Inception** para definição e entendimento da proposta do produto.
+> **Status:** em desenvolvimento. A API possui um endpoint de demonstração. Os módulos de negócio, a autenticação e a integração com o banco ainda serão implementados.
 
-A solução tem como objetivo auxiliar no gerenciamento de informações dos clientes, no envio de mensagens relacionadas a agendamentos e na disponibilização de dados para geração de **dashboards e análises**.
+## Visão do produto
 
-A proposta inicial define o produto como um sistema capaz de enviar mensagens de agendamento, fornecer dados para análise e criação de dashboards.
+O DentalCare tem como objetivo centralizar informações de clientes e consultas, apoiar a comunicação sobre agendamentos e disponibilizar dados para acompanhamento e análise da clínica.
 
----
+O escopo proposto não inclui rede social nem processamento de pagamentos.
 
-# 🎯 Objetivo
+## Funcionalidades previstas
 
-Desenvolver uma solução que auxilie uma clínica odontológica na organização de informações e no acompanhamento de seus clientes e agendamentos.
+- [ ] Cadastro e gerenciamento de clientes
+- [ ] Criação e acompanhamento de agendamentos
+- [ ] Envio de mensagens relacionadas às consultas
+- [ ] Autenticação e autorização de usuários
+- [ ] Armazenamento de informações da clínica
+- [ ] Disponibilização de dados para dashboards e análises
 
-O sistema busca centralizar informações importantes e transformar os dados gerados pela clínica em informações que possam ser utilizadas para acompanhamento e análise.
+## Tecnologias
 
----
+| Componente | Tecnologia |
+| --- | --- |
+| Frontend | React, JavaScript e Vite |
+| Backend | Java 21, Spring Boot e Maven |
+| Documentação da API | Swagger UI e OpenAPI |
+| Banco de dados previsto | MySQL |
+| Versionamento | Git e GitHub |
 
-# 💡 Proposta do Produto
+## Organização do repositório
 
-# O sistema é:
+```text
+.
+├── backend/                 # API REST em Java e Spring Boot
+│   └── src/
+│       ├── main/java/       # Código da aplicação
+│       ├── main/resources/  # Configurações
+│       └── test/java/       # Espaço para testes
+├── database/                # Modelagens e scripts SQL
+└── frontend/                # Aplicação web em React e Vite
+    ├── public/              # Arquivos estáticos públicos
+    └── src/                 # Código-fonte da interface
+        ├── assets/          # Imagens e recursos visuais
+        ├── App.jsx           # Componente principal
+        ├── App.css           # Estilos do componente principal
+        ├── index.css         # Estilos globais
+        └── main.jsx          # Inicialização do React
+```
 
-* 📅 Um produto que envia mensagens de agendamento;
-* 📊 Um produto que fornece dados para geração de dashboards e análise de dados;
-* 👤 Um produto que permite o agendamento de consultas;
+O backend utiliza o pacote base `br.com.dentalcare`, organizado em `config`, `controller`, `dto`, `exception`, `mapper`, `model`, `repository`, `security` e `service`.
 
-# O sistema não é:
+## Executar localmente
 
-* ❌ Uma rede social;
-* ❌ Uma plataforma destinada à realização de pagamentos.
+### Pré-requisitos
 
----
+- JDK 21 ou superior e Maven 3.9 ou superior para o backend
+- Node.js e npm para o frontend
 
-# 🚀 Funcionalidades
+### Backend
 
-A proposta inicial contempla as seguintes funcionalidades:
+No terminal, a partir da raiz do repositório:
 
-* [ ] Gerenciamento das informações dos clientes;
-* [ ] Envio de mensagens relacionadas aos agendamentos;
-* [ ] Armazenamento de informações para análise;
-* [ ] Disponibilização de dados para dashboards;
-* [ ] Análise dos dados da clínica.
+```bash
+cd backend
+mvn spring-boot:run
+```
 
-> As funcionalidades podem ser ampliadas ou modificadas conforme a evolução das próximas etapas do projeto.
+Quando a aplicação estiver ativa, os endereços disponíveis são:
 
----
+| Recurso | Endereço |
+| --- | --- |
+| Endpoint de demonstração | `http://localhost:8080/api/hello` |
+| Swagger UI | `http://localhost:8080/swagger-ui.html` |
+| Especificação OpenAPI | `http://localhost:8080/api-docs` |
 
-# 🏗️ Projeto
+O endpoint `GET /api/hello` retorna `Hello World!`.
 
-O desenvolvimento do sistema será realizado de forma incremental, utilizando as definições estabelecidas durante a **Reunião de alinhamento** como base para a construção da solução.
+### Frontend
 
-# Etapas previstas
+Em outro terminal, a partir da raiz do repositório:
 
-1. **Levantamento da proposta**
-2. **Definição da visão do produto**
-3. **Identificação das funcionalidades**
-4. **Modelagem da solução**
-5. **Desenvolvimento**
-6. **Testes**
-7. **Análise dos resultados**
-8. **Evolução do sistema**
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
----
+O Vite informa no terminal o endereço local para abrir a aplicação. Para gerar a versão de produção, execute `npm run build` dentro de `frontend/`.
 
-# 📊 Dashboard e análise de dados
+## Banco de dados
 
-Um dos objetivos do sistema é fornecer dados que possam ser utilizados na construção de **dashboards**, permitindo visualizar e analisar informações relevantes da clínica.
+O diretório `database/` contém materiais de modelagem e scripts SQL. O MySQL está previsto para o projeto, mas a conexão JDBC ainda não está configurada no backend.
 
-A proposta original destaca a utilização dos dados do produto para geração de dashboards e análise de dados.
+## Contexto acadêmico
 
----
+Projeto desenvolvido para a disciplina **Pesquisa e Inovação III**, com atividades de definição do produto apoiadas por Lean Inception e planejamento incremental baseado em Scrum.
 
-# 👥 Público-alvo
+### Desenvolvedores
 
-O sistema é destinado ao contexto de uma **clínica odontológica**, auxiliando na organização das informações relacionadas aos seus clientes e agendamentos.
+- Ketellyn Santos
+- Lucas Ciriaco
+- Lucas Máximo
+- Manuela Garcia
+- Pablo Cordeiro
+- Vinicius Francelino
 
----
+## Licença
 
-# 🛠️ Tecnologias
-
-> **Tecnologias utilizadas no desenvolvimento:**
-* HTML5
-* CSS
-* JavaScript
-* Java / Spring Boot
-* MySQL
-* Git
-* GitHub
-
-> As tecnologias podem ser ampliadas ou modificadas conforme a evolução das próximas etapas do projeto.
-
----
-
-# 🔄 Metodologia
-
-O projeto utiliza conceitos da metodologia **Scrum**, uma abordagem utilizada para alinhar a equipe em relação à visão do produto, suas funcionalidades e seus objetivos.
-
-A primeira etapa registrada no projeto corresponde à **Sprint 1**, com a definição da visão do produto e dos limites da solução.
-
----
-
-# 👨‍💻 Equipe
-
-**Projeto acadêmico — Pesquisa e Inovação III**
-
-> Ketellyn Santos;
-> Lucas Ciriaco;
-> Lucas Máximo;
-> Manuela Garcia;
-> Pablo Cordeiro;
-> Vinicius Francelino;
-
----
-
-## 📚 Contexto acadêmico
-
-Projeto desenvolvido como parte das atividades de **Pesquisa e Inovação III**, utilizando a metodologia **Scrum** para definição da visão e proposta do produto.
-
----
-
-## 📜 Licença
-
-Este projeto foi desenvolvido para fins acadêmicos.
-
----
+Projeto acadêmico. Uma licença de distribuição ainda não foi definida.

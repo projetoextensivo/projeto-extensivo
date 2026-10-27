@@ -1,0 +1,60 @@
+.patient-identity {
+  display:flex;
+  gap:12px;
+  align-items:center}
+.avatar {
+  display:inline-grid;
+  place-items:center;
+  width:43px;
+  height:43px;
+  min-width:43px;
+  border-radius:50%;
+  background:#e2effe;
+  color:#3c78b1;
+  font-size:14px;
+  font-weight:600}
+.avatar.large {
+  width:64px;
+  height:64px;
+  min-width:64px;
+  font-size:23px}
+.patient-identity strong {
+  color:#234666;
+  font-size:14px;
+  display:block;
+  font-weight:600;
+  white-space:nowrap}
+.patient-identity small {
+  display:block;
+  color:#7b8da2;
+  font-size:14px;
+  margin-top:5px}
+.patient-summary {
+  display:flex;
+  gap:14px;
+  align-items:center;
+  margin-bottom:24px}
+.patient-summary h2 {
+  font-size:20px;
+  letter-spacing:-.5px;
+  margin-bottom:7px}
+.patient-summary .badge {
+  font-size:14px;
+  padding:4px 9px}
+.patient-summary p {
+  font-size:14px;
+  color:var(--muted);
+  margin-top:8px}
+@media (max-width:1250px) {
+  .patient-identity strong {
+  font-size:14px}
+}
+@media (max-width:760px) {
+  .patient-identity small {
+  font-size:14px}
+.patient-identity strong {
+  font-size:14px}
+.patient-summary h2 {
+  font-size:24px}
+}
+

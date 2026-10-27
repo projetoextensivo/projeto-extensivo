@@ -1,0 +1,122 @@
+.auth-form-panel {
+  padding:58px 61px;
+  align-self:center}
+.auth-form-heading {
+  margin-bottom:32px}
+.auth-form-heading .eyebrow {
+  font-size:14px;
+  letter-spacing:1.8px;
+  color:#8aa0b7;
+  font-weight:600;
+  margin-bottom:14px}
+.auth-form-heading h2 {
+  font-size:29px;
+  letter-spacing:-.8px;
+  font-weight:600;
+  margin-bottom:11px}
+.auth-form-heading p {
+  color:#7b8898;
+  font-size:14px;
+  line-height:1.7}
+.auth-form .field {
+  font-size:14px;
+  margin-bottom:20px}
+.auth-form input,.auth-form select {
+  font-size:14px;
+  min-height:47px;
+  border-color:#bed0e5}
+.auth-form .password-field {
+  border-color:#bed0e5}
+.auth-form .checkbox-row {
+  font-size:14px;
+  gap:7px}
+.auth-form .text-button {
+  font-size:14px}
+.auth-form .password-field .icon-button {
+  width:35px;
+  min-width:35px}
+.auth-options {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin:5px 0 27px}
+.auth-submit {
+  width:100%;
+  flex-direction:row-reverse;
+  min-height:47px;
+  font-size:14px}
+.auth-switch {
+  text-align:center;
+  color:#7c8999;
+  font-size:14px;
+  line-height:1.8;
+  margin-top:16px}
+.auth-switch .text-button {
+  font-size:14px;
+  margin-left:4px;
+  min-height:20px;
+  font-weight:600}
+.demo-access {
+  border-top:1px solid #e6edf5;
+  margin-top:28px;
+  padding-top:22px;
+  text-align:center}
+.demo-access>span {
+  display:block;
+  font-size:14px;
+  color:#8b9aac;
+  margin-bottom:13px}
+.demo-access .button {
+  width:100%;
+  font-size:14px;
+  border-color:#d5e3f1;
+  color:#6288ad;
+  min-height:43px}
+@media (max-width:1023px) {
+  .auth-form-panel {
+  padding:45px 38px}
+}
+@media (max-width:760px) {
+  .auth-form-panel {
+  padding:38px 31px}
+.auth-form-heading {
+  margin-bottom:29px}
+.auth-form-heading h2 {
+  font-size:30px}
+.auth-form-heading p {
+  font-size:14px}
+.auth-form .field {
+  font-size:14px}
+.auth-form input,.auth-form select {
+  font-size:14px}
+.auth-form .checkbox-row,.auth-form .text-button {
+  font-size:14px}
+.auth-form .auth-options .text-button {
+  font-size:14px}
+.auth-submit {
+  font-size:14px}
+.auth-switch,.auth-switch .text-button {
+  font-size:14px}
+.demo-access>span {
+  font-size:14px}
+.demo-access .button {
+  font-size:14px}
+}
+@media (max-width:480px) {
+  .auth-form-panel {
+  padding:34px 25px}
+.auth-form .checkbox-row {
+  font-size:14px}
+.auth-form .auth-options .text-button {
+  font-size:14px}
+.auth-options {
+  gap:7px}
+.auth-form .auth-options input[type=checkbox] {
+  width:16px;
+  height:16px;
+  min-height:16px}
+.auth-form-heading h2 {
+  font-size:28px}
+}
+

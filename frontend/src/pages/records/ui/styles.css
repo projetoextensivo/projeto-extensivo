@@ -1,0 +1,380 @@
+
+.back-link {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--primary);
+  background:none;
+  border:none;
+  min-height:32px;
+  font-size:14px;
+  padding:0;
+  margin:-14px 0 17px}
+.back-link:hover {
+  text-decoration:underline}
+.records-panel {
+  background:#eaf3fd;
+  border-radius:13px;
+  border:1px solid #e2edf9;
+  padding:22px}
+.record-patient-header {
+  display:flex;
+  align-items:center;
+  gap:19px;
+  border-radius:11px;
+  padding:23px;
+  background:white;
+  box-shadow:var(--shadow);
+  margin-bottom:16px}
+.record-patient-info {
+  flex:1;
+  min-width:0}
+.record-patient-info>div {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-bottom:11px}
+.record-patient-info h2 {
+  font-size:22px;
+  letter-spacing:-.5px}
+.record-patient-info .badge {
+  font-size:14px;
+  padding:5px 9px}
+.record-patient-info p {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  flex-wrap:wrap;
+  font-size:14px;
+  color:#6b7b8f;
+  margin-top:9px}
+.record-patient-info p>span {
+  display:flex;
+  align-items:center;
+  gap:6px}
+.record-patient-info p svg {
+  color:#568bbd;
+  width:14px}
+.visit-info {
+  display:flex;
+  align-items:center;
+  gap:22px;
+  border-left:1px solid #dbe7f5;
+  padding-left:23px}
+.visit-info>div {
+  display:flex;
+  align-items:center;
+  gap:10px}
+.visit-icon {
+  width:36px;
+  height:39px;
+  border-radius:9px;
+  display:grid;
+  place-items:center;
+  color:#4d87bc;
+  background:#e8f2ff}
+.visit-info small {
+  display:block;
+  color:#788697;
+  font-size:14px;
+  margin-bottom:6px;
+  white-space:nowrap}
+.visit-info strong {
+  display:block;
+  font-size:16px;
+  letter-spacing:-.5px;
+  white-space:nowrap}
+.record-tabs-row {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  margin-bottom:17px}
+.record-tabs {
+  display:flex;
+  align-items:center;
+  padding:4px;
+  border:1px solid #e1eaf5;
+  background:white;
+  border-radius:8px;
+  gap:4px;
+  flex-wrap:wrap}
+.record-tabs button {
+  border:0;
+  background:none;
+  font-size:14px;
+  min-height:34px;
+  padding:9px 13px;
+  border-radius:5px;
+  white-space:nowrap;
+  font-weight:500}
+.record-tabs button:hover {
+  background:#f0f6fd}
+.record-tabs button.active {
+  background:var(--primary);
+  color:white}
+.record-tabs-row>small {
+  font-size:14px;
+  color:#7d8fa2;
+  text-align:right}
+.record-columns {
+  display:grid;
+  grid-template-columns:minmax(0,1.9fr) minmax(0,1fr);
+  gap:18px}
+.record-main,.record-aside {
+  display:flex;
+  flex-direction:column;
+  gap:17px;
+  min-width:0}
+.treatment-card .card-heading {
+  margin-bottom:16px}
+.treatment-card .card-heading>span {
+  font-size:14px}
+.treatment-item {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  justify-content:space-between;
+  width:100%;
+  text-align:left;
+  position:relative;
+  border:none;
+  border-radius:7px;
+  background:#f4f8fd;
+  padding:13px 13px 13px 18px;
+  margin-top:9px}
+.treatment-item:before {
+  content:'';
+  position:absolute;
+  left:8px;
+  top:12px;
+  bottom:12px;
+  width:3px;
+  border-radius:2px;
+  background:#6798c6}
+.treatment-item.complete:before {
+  background:#4d9270}
+.treatment-item:hover {
+  background:#eaf3fd}
+.treatment-item strong {
+  font-size:14px;
+  font-weight:600;
+  display:block}
+.treatment-item small {
+  font-size:14px;
+  color:#788a9d;
+  display:block;
+  margin-top:6px}
+.treatment-item .badge {
+  font-size:14px}
+.history-card .card-heading {
+  margin-bottom:18px}
+.history-card .text-button {
+  font-size:14px}
+.allergy-alert {
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
+  border-radius:20px;
+  background:#fcebed;
+  color:#ac3f4e;
+  font-size:14px;
+  padding:6px 9px;
+  margin:2px 0 12px}
+.patient-note {
+  padding:13px;
+  background:#f3f8fe;
+  border-radius:8px;
+  margin-bottom:18px}
+.patient-note p {
+  font-size:14px;
+  line-height:1.8;
+  color:#718295}
+.patient-note small {
+  font-size:14px;
+  color:#4f82b1;
+  display:block;
+  margin-top:8px}
+.alerts-card>.button {
+  width:100%;
+  font-size:14px;
+  min-height:38px}
+.record-tab-content {
+  min-height:350px}
+.record-tab-content>.card-heading {
+  margin-bottom:25px}
+.record-tab-content .timeline article {
+  padding-bottom:26px}
+.record-tab-content .timeline h4 {
+  font-size:15px}
+.record-tab-content .timeline p {
+  font-size:14px}
+.record-tab-content .timeline time {
+  font-size:14px}
+.record-tab-content .timeline small {
+  font-size:14px}
+.anamnesis-summary {
+  background:var(--surface);
+  border:1px solid var(--line);
+  padding:18px;
+  border-radius:8px;
+  margin-bottom:24px}
+.anamnesis-summary h3 {
+  font-size:15px;
+  margin-bottom:12px}
+.anamnesis-summary p {
+  font-size:14px;
+  line-height:1.8;
+  color:var(--muted)}
+@media (min-width:1600px) {
+  .record-patient-info h2 {
+  font-size:26px}
+.record-patient-info p {
+  font-size:14px}
+.visit-info strong {
+  font-size:19px}
+.record-tabs button {
+  font-size:14px}
+.treatment-item strong {
+  font-size:14px}
+.treatment-item small {
+  font-size:14px}
+.treatment-item .badge {
+  font-size:14px}
+.patient-note p {
+  font-size:14px}
+.patient-note small,.allergy-alert {
+  font-size:14px}
+}
+@media (max-width:1250px) {
+  .records-panel {
+  padding:18px}
+.record-patient-header {
+  flex-wrap:wrap;
+  padding:20px}
+.record-patient-info {
+  flex-basis:calc(100% - 88px)}
+.visit-info {
+  border-left:0;
+  border-top:1px solid #e5edf7;
+  padding:15px 0 0;
+  width:100%;
+  gap:40px}
+.record-columns {
+  grid-template-columns:1.7fr 1fr;
+  gap:14px}
+.record-columns .card {
+  padding:17px}
+.record-tabs-row {
+  flex-wrap:wrap}
+.record-tabs-row>small {
+  display:none}
+.record-tabs {
+  width:100%;
+  justify-content:space-between}
+.record-tabs button {
+  padding:9px 10px}
+.treatment-item {
+  flex-wrap:wrap}
+.treatment-item .badge {
+  font-size:14px}
+.record-columns .card h2 {
+  font-size:14px}
+.record-aside .card-heading {
+  gap:6px}
+.history-card .text-button {
+  font-size:14px}
+}
+@media (max-width:760px) {
+  .records-panel {
+  padding:13px}
+.back-link {
+  margin-top:-10px;
+  margin-bottom:16px;
+  font-size:14px}
+.record-patient-header {
+  padding:17px;
+  gap:13px}
+.record-patient-header>.avatar {
+  width:50px;
+  height:50px;
+  min-width:50px;
+  font-size:19px}
+.record-patient-info {
+  flex-basis:calc(100% - 65px)}
+.record-patient-info h2 {
+  font-size:20px}
+.record-patient-info>div {
+  gap:8px;
+  margin-bottom:8px}
+.record-patient-info .badge {
+  font-size:14px}
+.record-patient-info p {
+  font-size:14px;
+  gap:8px 12px;
+  line-height:1.5}
+.visit-info {
+  gap:35px;
+  padding-top:13px}
+.visit-info strong {
+  font-size:14px}
+.visit-info small {
+  font-size:14px}
+.visit-icon {
+  height:32px;
+  width:30px}
+.visit-icon svg {
+  width:18px}
+.record-tabs {
+  gap:2px;
+  justify-content:flex-start;
+  padding:3px}
+.record-tabs button {
+  font-size:14px;
+  padding:9px 10px;
+  min-height:33px}
+.record-columns {
+  grid-template-columns:1fr;
+  gap:13px}
+.record-main,.record-aside {
+  gap:13px}
+.record-columns .card {
+  padding:18px}
+.record-columns .card h2 {
+  font-size:16px}
+.treatment-item strong {
+  font-size:14px}
+.treatment-item small {
+  font-size:14px}
+.treatment-item .badge {
+  font-size:14px}
+.patient-note p {
+  font-size:14px}
+.patient-note small {
+  font-size:14px}
+.history-card .text-button {
+  font-size:14px}
+}
+@media (max-width:480px) {
+  .record-patient-info h2 {
+  font-size:19px}
+.record-patient-info p {
+  font-size:14px}
+.visit-info {
+  gap:20px}
+.record-tabs button {
+  font-size:14px;
+  padding:8px}
+.record-columns .card {
+  padding:16px}
+.records-panel {
+  padding:10px}
+.record-tabs {
+  justify-content:space-between}
+.treatment-item {
+  padding-right:10px}
+.treatment-item .badge {
+  font-size:14px}
+}
+

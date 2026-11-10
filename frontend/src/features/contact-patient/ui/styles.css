@@ -1,0 +1,17 @@
+.contact-intro {
+  font-size:14px;
+  line-height:1.8;
+  color:var(--muted);
+  margin-bottom:18px}
+.contact-details {
+  display:flex;
+  justify-content:space-between;
+  gap:8px;
+  padding:13px;
+  margin-bottom:23px;
+  background:var(--surface);
+  border-radius:8px;
+  font-size:14px;
+  color:#6687a7;
+  flex-wrap:wrap}
+

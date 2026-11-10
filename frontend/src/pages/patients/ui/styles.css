@@ -1,0 +1,259 @@
+.patients-table {
+  font-size:14px}
+.patients-table thead {
+  background:#d8eafb}
+.patients-table th {
+  padding:16px 18px;
+  font-weight:600;
+  font-size:14px;
+  color:#3c5a78;
+  white-space:nowrap}
+.patients-table td {
+  padding:15px 18px;
+  border-bottom:1px solid #e7eff8;
+  color:#4b6580;
+  vertical-align:middle}
+.patients-table tbody tr:last-child td {
+  border-bottom:0}
+.patients-table tbody tr:hover {
+  background:#f8fbff}
+.patients-table .selected-row {
+  background:#f0f7ff}
+.patient-name-button {
+  border:none;
+  background:none;
+  padding:0;
+  text-align:left;
+  min-height:46px;
+  min-width:150px;
+  border-radius:5px}
+.contact-cell {
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+  font-size:14px;
+  white-space:nowrap}
+.contact-cell>span {
+  display:flex;
+  align-items:center;
+  gap:7px}
+.contact-cell svg {
+  color:#7896b5}
+.patients-table .badge {
+  font-size:14px;
+  padding:6px 9px}
+.row-actions {
+  display:flex;
+  justify-content:flex-end;
+  gap:0}
+.row-actions .icon-button {
+  width:34px;
+  min-width:34px;
+  height:44px;
+  color:#7494b4}
+.table-pagination {
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:center;
+  font-size:14px;
+  color:#657d94;
+  padding:17px 2px 0}
+.table-pagination>div {
+  display:flex;
+  align-items:center;
+  gap:7px}
+.table-pagination>div>span {
+  display:grid;
+  place-items:center;
+  width:28px;
+  height:28px;
+  border-radius:6px;
+  background:white;
+  color:var(--primary);
+  font-weight:600}
+.table-pagination .icon-button {
+  width:32px;
+  height:32px;
+  min-width:32px}
+.patients-layout {
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:20px}
+.patients-layout.with-panel {
+  grid-template-columns:minmax(0,1fr) 310px}
+.with-panel .patients-table th:nth-child(2),.with-panel .patients-table td:nth-child(2),.with-panel .patients-table th:nth-child(4),.with-panel .patients-table td:nth-child(4) {
+  display:none}
+.with-panel .patients-table th,.with-panel .patients-table td {
+  padding-left:12px;
+  padding-right:12px}
+.with-panel .patients-table th:nth-child(3),.with-panel .patients-table td:nth-child(3) {
+  display:none}
+.patient-side-panel {
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:20px;
+  background:white;
+  min-width:0;
+  box-shadow:var(--shadow)}
+.side-panel-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin-bottom:13px}
+.side-panel-top>span {
+  font-size:14px;
+  letter-spacing:1.5px;
+  color:#7c90a6}
+.side-panel-top .icon-button {
+  width:30px;
+  height:30px;
+  min-width:30px}
+.side-patient-contact {
+  display:flex;
+  flex-direction:column;
+  gap:13px;
+  font-size:14px;
+  color:#6a7f95;
+  padding-bottom:20px}
+.side-patient-contact>span {
+  display:flex;
+  align-items:center;
+  gap:10px}
+.side-patient-contact svg {
+  color:#5a89b6}
+.side-panel-actions {
+  display:flex;
+  gap:8px}
+.side-panel-actions .button {
+  flex:1;
+  padding:10px;
+  font-size:14px;
+  gap:5px}
+.side-panel-actions svg {
+  width:15px}
+.side-panel-section {
+  border-top:1px solid var(--line);
+  margin-top:24px;
+  padding-top:22px}
+.side-panel-section h3 {
+  font-size:14px;
+  margin-bottom:16px}
+.patient-procedures>div {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:9px;
+  font-size:14px;
+  padding:12px 0;
+  border-bottom:1px solid #e9f0f7}
+.patient-procedures strong {
+  display:block;
+  font-size:14px;
+  font-weight:500}
+.patient-procedures small {
+  display:block;
+  font-size:14px;
+  color:var(--muted);
+  margin-top:6px}
+.patient-procedures>div>span {
+  white-space:nowrap;
+  color:#476f96}
+.patient-total {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:20px 0 24px;
+  font-size:14px}
+.patient-total strong {
+  font-size:16px;
+  color:var(--primary)}
+.patient-side-panel>.button {
+  width:100%;
+  font-size:14px}
+.delete-patient-button {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  width:100%;
+  min-height:44px;
+  border:none;
+  background:none;
+  color:#a44755;
+  margin-top:12px;
+  font-size:14px}
+@media (max-width:1250px) {
+  .patients-table td,.patients-table th {
+  padding-left:12px;
+  padding-right:12px}
+.patients-table .patient-identity {
+  gap:8px}
+.patients-table .avatar {
+  width:34px;
+  height:34px;
+  min-width:34px;
+  font-size:14px}
+.patient-name-button {
+  min-width:130px}
+.patients-table th:nth-child(2),.patients-table td:nth-child(2) {
+  display:none}
+.patients-table .row-actions .icon-button {
+  width:28px;
+  min-width:28px}
+.patients-table .badge {
+  font-size:14px}
+.contact-cell {
+  font-size:14px}
+.patients-layout.with-panel {
+  grid-template-columns:minmax(0,1fr) 280px}
+.with-panel .patients-table th:nth-child(5),.with-panel .patients-table td:nth-child(5) {
+  display:none}
+}
+@media (max-width:760px) {
+  .patients-table th,.patients-table td {
+  padding:12px 10px}
+.patients-table th:nth-child(4),.patients-table td:nth-child(4) {
+  display:none}
+.contact-cell {
+  font-size:14px}
+.contact-cell svg {
+  width:12px}
+.patients-table .badge {
+  font-size:14px;
+  padding:5px 7px}
+.patients-table .row-actions .icon-button {
+  width:27px;
+  min-width:27px}
+.patients-table .row-actions .icon-button:last-child {
+  display:none}
+.table-pagination {
+  font-size:14px;
+  gap:5px;
+  padding-top:12px}
+.table-pagination>div {
+  gap:2px}
+.patients-layout.with-panel {
+  grid-template-columns:1fr}
+.with-panel .patients-table th:nth-child(5),.with-panel .patients-table td:nth-child(5) {
+  display:table-cell}
+.patient-side-panel {
+  padding:22px}
+.side-patient-contact {
+  font-size:14px}
+.patient-procedures strong,.patient-procedures>div>span {
+  font-size:14px}
+.patient-procedures small {
+  font-size:14px}
+}
+@media (max-width:480px) {
+  .patients-table th:nth-child(3),.patients-table td:nth-child(3) {
+  display:none}
+.patient-name-button {
+  min-width:120px}
+.patients-table th,.patients-table td {
+  padding:12px 8px}
+}
+

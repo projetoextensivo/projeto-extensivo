@@ -1,7 +1,9 @@
-# Node / React
+# Node / React / spring / java
 node_modules/
 dist/
 build/
+target/
+*.class
 
 # Variáveis de ambiente
 .env
@@ -14,16 +16,10 @@ npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
 
-# Java / Maven
-target/
-*.class
-
-# IntelliJ
+# IDE
+.vscode/
 .idea/
 *.iml
-
-# VS Code
-.vscode/
 
 # Sistema operacional
 .DS_Store

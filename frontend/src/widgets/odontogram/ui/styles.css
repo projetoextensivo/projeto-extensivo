@@ -1,0 +1,156 @@
+.odontogram-card .card-heading {
+  flex-wrap:wrap;
+  margin-bottom:16px}
+.tooth-legend {
+  display:flex;
+  gap:9px;
+  align-items:center;
+  flex-wrap:wrap}
+.tooth-legend>span {
+  display:flex;
+  align-items:center;
+  gap:4px;
+  font-size:14px;
+  color:#758598}
+.tooth-status {
+  display:inline-block;
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  border:1px solid #96afca;
+  background:#fff}
+.tooth-status.condition-1 {
+  background:#5a8bb8}
+.tooth-status.condition-2 {
+  background:#dc9b3c}
+.tooth-status.condition-3 {
+  background:#c95c65}
+.tooth-status.condition-4 {
+  background:#e5ecf6}
+.teeth-chart {
+  width:100%;
+  margin:8px 0 19px}
+.tooth-row {
+  display:grid;
+  grid-template-columns:repeat(16,minmax(0,1fr))}
+.tooth-row.upper {
+  border-bottom:1px solid #e5ecf5;
+  padding-bottom:6px}
+.tooth-row.lower {
+  padding-top:6px}
+.tooth-button {
+  border:0;
+  background:none;
+  min-width:0;
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+  gap:6px;
+  padding:5px 4px;
+  position:relative;
+  border-radius:3px;
+  color:#94aecb}
+.tooth-button:hover {
+  background:#e9f3ff}
+.tooth-button span {
+  font-size:14px;
+  color:#6f7f91}
+.tooth-button svg {
+  width:100%;
+  max-width:26px;
+  height:49px}
+.tooth-button .tooth-fill {
+  fill:white}
+.tooth-button.condition-1 .tooth-fill {
+  fill:#568bb9}
+.tooth-button.condition-2 .tooth-fill {
+  fill:#d9983f}
+.tooth-button.condition-3 .tooth-fill {
+  fill:#cc646d}
+.tooth-button.condition-4 {
+  opacity:.35}
+.tooth-button.condition-1 span,.tooth-button.condition-2 span,.tooth-button.condition-3 span {
+  color:#2b5177;
+  font-weight:600}
+.quadrant-end {
+  border-right:1px solid #dce7f5;
+  border-radius:0}
+.lower .tooth-button {
+  flex-direction:column-reverse}
+.lower .tooth-button svg {
+  transform:rotate(180deg)}
+.info-strip {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:#f1f7fe;
+  border-radius:8px;
+  padding:13px;
+  color:#5e8cb7}
+.info-strip strong {
+  font-size:14px;
+  display:block;
+  color:#355a7d;
+  font-weight:600}
+.info-strip p {
+  font-size:14px;
+  line-height:1.6;
+  color:#7b8da1;
+  margin-top:4px}
+@media (min-width:1600px) {
+  .tooth-button svg {
+  height:58px}
+.tooth-button span {
+  font-size:14px}
+.tooth-legend>span {
+  font-size:14px}
+.info-strip strong {
+  font-size:14px}
+.info-strip p {
+  font-size:14px}
+}
+@media (max-width:1250px) {
+  .tooth-legend>span {
+  font-size:14px}
+.tooth-legend {
+  gap:7px}
+.tooth-button {
+  padding-left:2px;
+  padding-right:2px}
+.tooth-button svg {
+  height:42px}
+.tooth-button span {
+  font-size:14px}
+}
+@media (max-width:760px) {
+  .tooth-button svg {
+  height:46px}
+.tooth-button span {
+  font-size:14px}
+.tooth-legend>span {
+  font-size:14px}
+.tooth-legend {
+  gap:9px}
+.info-strip strong {
+  font-size:14px}
+.info-strip p {
+  font-size:14px}
+}
+@media (max-width:480px) {
+  .tooth-button svg {
+  height:35px}
+.tooth-button span {
+  font-size:14px}
+.tooth-legend>span {
+  font-size:14px}
+.tooth-legend {
+  gap:7px}
+.info-strip {
+  padding:11px;
+  gap:9px}
+.info-strip strong {
+  font-size:14px}
+.info-strip p {
+  font-size:14px}
+}
+

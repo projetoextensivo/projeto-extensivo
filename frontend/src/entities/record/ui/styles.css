@@ -1,0 +1,60 @@
+.timeline {
+  display:flex;
+  flex-direction:column;
+  gap:0}
+.timeline article {
+  position:relative;
+  margin-left:5px;
+  padding:0 0 22px 18px;
+  border-left:1px solid #cfdfef}
+.timeline article:before {
+  position:absolute;
+  content:'';
+  left:-4px;
+  top:2px;
+  width:7px;
+  height:7px;
+  background:#5e91bf;
+  border-radius:50%;
+  border:2px solid white;
+  box-shadow:0 0 0 1px #9bbad6}
+.timeline article:last-child {
+  padding-bottom:0;
+  border-color:transparent}
+.timeline time {
+  color:#8090a0;
+  font-size:14px;
+  display:block;
+  margin-bottom:7px}
+.timeline h4 {
+  font-size:14px;
+  font-weight:600;
+  color:#284d71;
+  margin-bottom:5px;
+  line-height:1.5}
+.timeline p {
+  font-size:14px;
+  line-height:1.7;
+  color:#7b8999}
+.timeline small {
+  font-size:14px;
+  color:#6385a6;
+  display:block;
+  margin-top:6px}
+@media (min-width:1600px) {
+  .timeline h4 {
+  font-size:14px}
+.timeline p {
+  font-size:14px}
+.timeline small,.timeline time {
+  font-size:14px}
+}
+@media (max-width:760px) {
+  .timeline time,.timeline small {
+  font-size:14px}
+.timeline h4 {
+  font-size:14px}
+.timeline p {
+  font-size:14px}
+}
+

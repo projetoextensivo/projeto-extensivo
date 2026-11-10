@@ -1,0 +1,75 @@
+
+.settings-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px}
+.settings-grid>.card {
+  padding:28px}
+.settings-heading {
+  display:flex;
+  gap:14px;
+  align-items:center;
+  padding-bottom:24px;
+  border-bottom:1px solid var(--line);
+  margin-bottom:25px}
+.settings-heading h2 {
+  font-size:18px;
+  letter-spacing:-.3px}
+.settings-heading p {
+  font-size:14px;
+  color:var(--muted);
+  margin-top:7px}
+.settings-icon {
+  width:45px;
+  height:45px;
+  border-radius:12px;
+  background:#e9f3ff;
+  color:#5a8fbf;
+  display:grid;
+  place-items:center;
+  flex-shrink:0}
+.storage-notice {
+  display:flex;
+  gap:15px;
+  padding:20px 23px;
+  border-radius:10px;
+  background:#f0f6fd;
+  color:#628ab1;
+  margin-top:25px;
+  border:1px solid #e3edf7}
+.storage-notice strong {
+  font-size:14px;
+  color:#42658a}
+.storage-notice p {
+  font-size:14px;
+  line-height:1.7;
+  color:#798ba0;
+  margin-top:6px}
+@media (max-width:1250px) {
+  .settings-grid {
+  gap:18px}
+.settings-grid>.card {
+  padding:23px}
+.settings-grid .form-grid {
+  grid-template-columns:1fr}
+}
+@media (max-width:760px) {
+  .settings-grid {
+  grid-template-columns:1fr;
+  gap:17px}
+.settings-grid .form-grid {
+  grid-template-columns:1fr 1fr}
+.settings-grid>.card {
+  padding:22px}
+.settings-heading h2 {
+  font-size:17px}
+.storage-notice {
+  padding:17px}
+.storage-notice p {
+  font-size:14px}
+}
+@media (max-width:480px) {
+  .settings-grid .form-grid {
+  grid-template-columns:1fr}
+}
+

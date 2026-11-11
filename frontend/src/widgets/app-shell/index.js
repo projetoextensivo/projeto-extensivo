@@ -1,1 +1,1 @@
-export { AppShell } from './ui/app-shell.jsx';
+export { AppShell } from './view/app-shell.jsx';

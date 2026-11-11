@@ -1,1 +1,1 @@
-export { Odontogram } from './ui/odontogram.jsx';
+export { Odontogram } from './view/odontogram.jsx';

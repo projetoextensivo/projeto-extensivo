@@ -1,1 +1,1 @@
-export { ContactPatient } from './ui/contact-patient.jsx';
+export { ContactPatient } from './view/contact-patient.jsx';

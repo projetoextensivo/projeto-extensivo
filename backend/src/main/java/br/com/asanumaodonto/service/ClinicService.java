@@ -1,11 +1,11 @@
-package br.com.odontoagenda.service;
+package br.com.asanumaodonto.service;
 import java.time.*;
 import java.util.*;
-import br.com.odontoagenda.api.ApiException;
-import br.com.odontoagenda.repository.ClinicRepository;
+import br.com.asanumaodonto.api.ApiException;
+import br.com.asanumaodonto.repository.ClinicRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import static br.com.odontoagenda.service.AuthService.text;
+import static br.com.asanumaodonto.service.AuthService.text;
 @Service
 public class ClinicService {
  private final ClinicRepository repo; private final AuthService auth;

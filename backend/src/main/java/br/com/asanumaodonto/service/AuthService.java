@@ -1,7 +1,7 @@
-package br.com.odontoagenda.service;
+package br.com.asanumaodonto.service;
 import java.util.*;
-import br.com.odontoagenda.api.ApiException;
-import br.com.odontoagenda.repository.ClinicRepository;
+import br.com.asanumaodonto.api.ApiException;
+import br.com.asanumaodonto.repository.ClinicRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

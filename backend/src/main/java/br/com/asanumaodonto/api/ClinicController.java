@@ -1,6 +1,6 @@
-package br.com.odontoagenda.api;
+package br.com.asanumaodonto.api;
 import java.util.*;
-import br.com.odontoagenda.service.*;
+import br.com.asanumaodonto.service.*;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

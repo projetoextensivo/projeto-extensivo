@@ -1,4 +1,4 @@
-package br.com.odontoagenda.api;
+package br.com.asanumaodonto.api;
 import java.util.Map;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

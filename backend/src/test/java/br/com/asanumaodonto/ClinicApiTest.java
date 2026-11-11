@@ -1,5 +1,5 @@
 
-package br.com.odontoagenda;
+package br.com.asanumaodonto;
 import java.util.*;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -18,7 +18,7 @@ class ClinicApiTest {
  @Autowired MockMvc mvc; @Autowired ObjectMapper json;
  @Test void rolesSchedulingAndConflicts() throws Exception {
   mvc.perform(get("/api/bootstrap")).andExpect(status().isUnauthorized());
-  var login=mvc.perform(post("/api/auth/login").contentType(MediaType.APPLICATION_JSON).content(json.writeValueAsString(Map.of("email","demo@odontoagenda.com","password","Odonto@2026")))).andExpect(status().isOk()).andReturn();
+  var login=mvc.perform(post("/api/auth/login").contentType(MediaType.APPLICATION_JSON).content(json.writeValueAsString(Map.of("email","demo@asanumaodonto.com","password","Odonto@2026")))).andExpect(status().isOk()).andReturn();
   var admin=(MockHttpSession)login.getRequest().getSession();
   mvc.perform(get("/api/procedures").session(admin)).andExpect(status().isOk());
   var signup=new HashMap<String,Object>(Map.of("name","Secretária Teste","email","secretaria@example.com","password","Senha@2026","confirmPassword","Senha@2026","terms",true,"role","Administrador"));

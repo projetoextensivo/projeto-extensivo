@@ -1,4 +1,4 @@
-# DentalCare
+# Asanuma Odonto
 
 Sistema web acadêmico para apoiar a gestão de uma clínica odontológica. O projeto está sendo desenvolvido de forma incremental e reúne uma aplicação web, uma API REST e materiais de modelagem do banco de dados.
 
@@ -6,7 +6,7 @@ Sistema web acadêmico para apoiar a gestão de uma clínica odontológica. O pr
 
 ## Visão do produto
 
-O DentalCare tem como objetivo centralizar informações de clientes e consultas, apoiar a comunicação sobre agendamentos e disponibilizar dados para acompanhamento e análise da clínica.
+O Asanuma Odonto tem como objetivo centralizar informações de clientes e consultas, apoiar a comunicação sobre agendamentos e disponibilizar dados para acompanhamento e análise da clínica.
 
 O escopo proposto não inclui rede social nem processamento de pagamentos.
 
@@ -49,7 +49,7 @@ O escopo proposto não inclui rede social nem processamento de pagamentos.
         └── main.jsx          # Inicialização do React
 ```
 
-O backend utiliza o pacote base `br.com.dentalcare`, organizado em `config`, `controller`, `dto`, `exception`, `mapper`, `model`, `repository`, `security` e `service`.
+O backend utiliza o pacote base `br.com.asanumaodonto`, organizado em `config`, `controller`, `dto`, `exception`, `mapper`, `model`, `repository`, `security` e `service`.
 
 ## Executar localmente
 

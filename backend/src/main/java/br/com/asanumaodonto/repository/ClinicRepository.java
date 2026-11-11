@@ -1,4 +1,4 @@
-package br.com.odontoagenda.repository;
+package br.com.asanumaodonto.repository;
 import java.util.*;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;

@@ -1,7 +1,7 @@
-package br.com.odontoagenda.config;
+package br.com.asanumaodonto.config;
 import java.util.*;
-import br.com.odontoagenda.api.ApiException;
-import br.com.odontoagenda.service.AuthService;
+import br.com.asanumaodonto.api.ApiException;
+import br.com.asanumaodonto.service.AuthService;
 import jakarta.servlet.http.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
